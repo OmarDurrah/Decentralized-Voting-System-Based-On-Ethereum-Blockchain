@@ -240,7 +240,7 @@ This project requires **MetaMask** to sign blockchain transactions and interact 
 After starting Ganache:
 
 - RPC Server: `http://127.0.0.1:7545` (or your configured port)
-- Chain ID: `1337` (default for Ganache)
+- Chain ID: `5777` (default for Ganache)
 - Currency Symbol: `ETH`
 
 ---
@@ -257,7 +257,7 @@ After starting Ganache:
 |-------|-------|
 | Network Name | Ganache Local |
 | New RPC URL | http://127.0.0.1:7545 |
-| Chain ID | 1337 |
+| Chain ID | 5777 |
 | Currency Symbol | ETH |
 
 6. Click **Save**.
