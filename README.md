@@ -151,7 +151,7 @@ Solidity Version: **0.8.13**
 ### 1️⃣ Clone Repository
 
 
-git clone https://github.com/yourusername/decentralized-voting-system.git
+git clone https://github.com/OmarDurrah/decentralized-voting-system.git
 cd decentralized-voting-system
 
 
