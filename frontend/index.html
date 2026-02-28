@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blockchain Voting System</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light">
+  <!-- 🌙 Theme + Sign Out -->
+  <button id="theme-toggle" class="theme-btn">🌙</button>
+  <button id="sign-out" class="sign-out-btn hidden">🔓 Sign Out</button>
+
+  <div class="container">
+    <h1 class="title fade-in-top">Blockchain Voting System</h1>
+
+    <!-- 🔐 Login Section -->
+    <div id="login-section" class="box glass fade-in-bottom">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required />
+
+        <label for="password">Password:</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required />
+          <button type="button" id="toggle-password" class="eye-btn" tabindex="-1">
+            <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+
+        <button type="submit" class="animated-btn">Login</button>
+      </form>
+    </div>
+
+    <!-- 🗳 Voting Section -->
+    <div id="voting-section" class="box glass hidden fade-in-bottom">
+      <h2>Vote for Your Candidate</h2>
+      <p id="user-email" style="font-weight: bold; margin-bottom: 10px;"></p>
+
+      <!-- 📊 College Bloc Results Filter -->
+      <label for="college-select" style="margin-top: 10px;">View College Bloc Results for:</label>
+      <select id="college-select" class="animated-btn" style="margin: 10px 0;"></select>
+
+      <!-- 🗳 Voting Form -->
+      <form id="vote-form">
+        <h3>University Bloc Voting</h3>
+        <div class="candidate-list"></div>
+
+        <h3>College Bloc Voting</h3>
+        <div class="college-bloc-list"></div>
+
+        <button type="submit" class="animated-btn">Submit Vote</button>
+      </form>
+
+      <button id="refresh-results" class="animated-btn" style="margin-top: 10px;">🔄 Show / Refresh Results</button>
+
+      <!-- 📊 Vote Count Charts (Moved inside voting section) -->
+      <div id="vote-results" class="glass fade-in-bottom" style="margin-top: 20px;">
+        <h2>Voting Results</h2>
+
+        <div class="chart-box">
+          <canvas id="universityChart"></canvas>
+        </div>
+
+        <div class="chart-box" style="margin-top: 20px;">
+          <canvas id="collegeChart"></canvas>
+        </div>
+
+        <p id="my-vote" class="my-vote-text">
+          You voted for: <span id="voted-candidate">Not voted yet</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

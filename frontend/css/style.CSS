@@ -1,0 +1,697 @@
+/* ---------------------- */
+/* GENERAL STYLING        */
+/* ---------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  transition: background 0.8s ease, color 0.8s ease;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ---------------------- */
+/* LIGHT & DARK MODE      */
+/* ---------------------- */
+body.light {
+  background: linear-gradient(180deg, rgba(0, 162, 255, 0.3) 0%, 
+              rgba(255, 255, 255, 0.6) 40%, rgba(0, 162, 255, 0.1) 100%),
+              url('https://source.unsplash.com/1920x1080/?abstract,blue') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+body.dark {
+  background: linear-gradient(180deg, rgba(0, 0, 50, 0.8) 0%, 
+              rgba(0, 0, 100, 0.7) 50%, rgba(0, 0, 150, 0.6) 100%);
+  background-size: cover;
+  color: #f0f0f0;
+}
+
+/* ---------------------- */
+/* TITLES & CONTAINERS    */
+/* ---------------------- */
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  margin-top: 70px;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  transition: 0.3s;
+}
+
+body.dark .glass {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* ---------------------- */
+/* FORM ELEMENTS          */
+/* ---------------------- */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark input {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+input:focus {
+  padding: 15px;
+  border: 2px solid #007bff;
+  outline: none;
+}
+
+/* ---------------------- */
+/* PASSWORD CONTAINER     */
+/* ---------------------- */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  padding: 5px;
+}
+
+body.dark .eye-btn {
+  color: #fff;
+}
+
+.eye-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #333;
+  transition: stroke 0.3s ease-in-out;
+}
+
+body.dark .eye-btn svg {
+  stroke: #fff;
+}
+
+.eye-btn:hover svg {
+  stroke: #007bff;
+}
+
+/* ---------------------- */
+/* CANDIDATE LIST & CARDS */
+/* ---------------------- */
+.candidate-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0; /* 🔁 Remove padding here */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.candidate-card input[type="radio"] {
+  display: none;
+}
+
+.candidate-card span {
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+/* ✅ Hover only around the text (like green one) */
+.candidate-card:hover span {
+  background: rgba(0, 162, 255, 0.1);
+  border: 2px solid #00a2ff;
+  box-shadow: 0 4px 10px rgba(0, 162, 255, 0.4);
+}
+
+/* ✅ When selected (same effect as green) */
+.candidate-card input[type="radio"]:checked + span {
+  background: rgba(0, 162, 255, 0.2);
+  border: 2px solid #00a2ff;
+  box-shadow: 0 4px 10px rgba(0, 162, 255, 0.6);
+  transform: scale(1.1);
+}
+
+/* ✅ University Bloc Style Modifier (Green Theme) */
+.university-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border: none; /* no border on the whole card */
+}
+
+.university-card input[type="radio"] {
+  display: none;
+}
+
+/* Span inside label gets the style */
+.university-card span {
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+/* ✅ Hover effect only around the text */
+.university-card:hover span {
+  background: rgba(40, 167, 69, 0.1);
+  border: 2px solid #28a745;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+}
+
+/* ✅ Selected state */
+.university-card input[type="radio"]:checked + span {
+  background: rgba(40, 167, 69, 0.2);
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.6);
+  transform: scale(1.1);
+}
+
+/* ---------------------- */
+/* BUTTONS                */
+/* ---------------------- */
+.animated-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.animated-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* ---------------------- */
+/* ANIMATION EFFECTS      */
+/* ---------------------- */
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-top {
+  animation: fadeInTop 1s ease-out;
+}
+
+.fade-in-bottom {
+  animation: fadeInBottom 1s ease-out;
+}
+
+/* ---------------------- */
+/* UTILITY CLASSES        */
+/* ---------------------- */
+.hidden {
+  display: none;
+}
+
+/* ---------------------- */
+/* THEME TOGGLE BUTTON   */
+/* ---------------------- */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* Moves it to the top-right corner */
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#theme-toggle:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Sign Out Button */
+.sign-out-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.sign-out-btn:hover {
+    background: #c9302c;
+    transform: scale(1.1);
+}
+
+input[type="text"] {
+  direction: rtl;
+  text-align: right;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Fix LTR for email and password inputs */
+input[type="email"],
+input[type="password"] {
+  direction: ltr;
+  text-align: left;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-container input {
+  flex: 1;
+  padding-right: 40px; /* Make room for the eye icon */
+  direction: ltr;
+  text-align: left;
+}
+
+.eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* -------------------------- */
+/* Admin Layout & Responsiveness */
+/* -------------------------- */
+.admin-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.admin-column {
+  flex: 1 1 400px;
+  max-width: 600px;
+  min-width: 320px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-row input,
+.form-row button {
+  flex: 1 1 100%;
+}
+
+/* -------------------------- */
+/* Shared Mobile Responsiveness (Admin + User) */
+/* -------------------------- */
+@media screen and (max-width: 768px) {
+  /* ADMIN */
+  .admin-flex-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  .admin-column,
+  .admin-table,
+  .box,
+  .form-row input,
+  .form-row button {
+    width: 100% !important;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .admin-table input {
+    width: 100%;
+  }
+
+  /* USER PAGE (index.html) */
+  .chart-box {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .chart-box canvas,
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .candidate-list,
+  .college-bloc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .animated-btn,
+  input,
+  select {
+    width: 100% !important;
+    font-size: 16px;
+  }
+
+  #college-select {
+    width: 100%;
+  }
+
+  .my-vote-text {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .container {
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-top: 80px;
+  }
+}
+
+
+/* -------------------------------------- */
+/* ✨ Additional Enhancements for Beauty  */
+/* -------------------------------------- */
+.glass {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #003366;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+  margin-top: 60px;
+}
+
+h2, h3 {
+  color: #007bff;
+  font-weight: 600;
+}
+
+label, p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+button.animated-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+button.animated-btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+}
+
+/* 🌟 BEAUTIFUL UI ENHANCEMENTS */
+
+/* Inputs with glowing focus */
+input:focus {
+  padding: 12px;
+  border: 2px solid #00b4d8;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+  outline: none;
+  background-color: #f0faff;
+}
+
+/* Soft hover glow for glass cards */
+.glass:hover {
+  box-shadow: 0 0 20px rgba(0, 162, 255, 0.3);
+  transform: translateY(-4px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Chart animation on load */
+canvas {
+  animation: fadeInChart 1.2s ease-out;
+}
+@keyframes fadeInChart {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Frosted container background */
+.container {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+}
+
+/* Floating title shadow and gradient */
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 70px;
+}
+
+
+/* Button hover and press animation */
+.animated-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.animated-btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+  transform: translateY(-2px);
+}
+
+.animated-btn:active {
+  transform: scale(0.96);
+  background: #0056b3;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: rainbowFlow 8s linear infinite;
+  margin-top: 60px;
+}
+
+@keyframes rainbowFlow {
+  0% { background-position: 0% }
+  100% { background-position: 400% }
+}
+
+/* 🌟 Visual Enhancement Pack */
+
+/* 1. Glass Button Glow on Hover */
+.animated-btn:hover {
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. Colorful Animated Border for Voting Cards */
+.candidate-card:hover span,
+.university-card:hover span {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  background: linear-gradient(90deg, #00c6ff, #007bff);
+  box-shadow: 0 0 8px rgba(0, 198, 255, 0.5);
+  transition: 0.3s ease;
+}
+
+/* 3. Subtle Pulse Animation for Charts */
+canvas {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.02);
+  }
+}
+
+/* 4. Page Load Fade-In for Main Container */
+.container {
+  animation: fadeInMain 1s ease-in-out;
+}
+
+@keyframes fadeInMain {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. Glow Focus Ring on Inputs */
+input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 174, 255, 0.6);
+  border-color: #00aeff;
+}
+
+/* 6. Floating Effect for Cards on Hover */
+.box:hover {
+  transform: translateY(-6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 30px rgba(0, 162, 255, 0.15);
+}
+
+/* 🔓 Remove blur effect from Sign Out and Theme Toggle buttons */
+#sign-out,
+#theme-toggle {
+  backdrop-filter: none !important;
+  background-color: rgba(0, 123, 255, 1); /* or your preferred solid color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+#sign-out {
+  backdrop-filter: none !important;
+  background-color: #d9534f !important; /* solid red */
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+#sign-out:hover {
+  background-color: #c9302c !important;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+select,
+select option {
+  color: #000;
+  background-color: #fff;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+}

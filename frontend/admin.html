@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ✅ Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="light">
+
+  <!-- ✅ Top Bar -->
+  <button id="theme-toggle" class="theme-btn">🌙</button>
+  <button id="sign-out" class="sign-out-btn">🔓 Sign Out</button>
+
+  <!-- ✅ Main Container -->
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    <h1 class="title fade-in-top">🛠️ Admin Panel</h1>
+
+    <div class="admin-flex-container">
+
+      <!-- ✅ Left Column (University Section) -->
+      <div class="admin-column">
+
+        <!-- Add University Bloc -->
+        <div class="box glass fade-in-bottom">
+          <h2>Add University Bloc</h2>
+          <form id="university-form">
+            <div class="form-row">
+              <input type="text" id="university-name" placeholder="University Bloc Name" required />
+              <button type="submit" class="animated-btn">Add</button>
+            </div>
+            <p id="univ-success" class="success-text hidden" style="color: green; margin-top: 8px;">✅ University bloc added!</p>
+            <p id="univ-error" class="error-text hidden" style="color: red; margin-top: 5px;">⚠️ This bloc already exists.</p>
+          </form>
+        </div>
+
+        <!-- University Bloc Table -->
+        <div class="box glass fade-in-bottom">
+          <h2>University Blocs</h2>
+          <table id="university-table" class="admin-table"></table>
+        </div>
+
+        <!-- University Vote Results Chart -->
+        <div class="box glass fade-in-bottom">
+          <h2>📊 University Vote Results</h2>
+          <canvas id="adminUniversityChart" height="180"></canvas>
+        </div>
+
+      </div>
+
+      <!-- ✅ Right Column (College Section) -->
+      <div class="admin-column">
+
+        <!-- Add College Bloc -->
+        <div class="box glass fade-in-bottom">
+          <h2>Add College Bloc</h2>
+          <form id="college-form">
+            <div class="form-row">
+              <input type="text" id="college-name" placeholder="College Bloc Name" required />
+              <input type="text" id="college-type" placeholder="College (e.g. engineering)" required />
+              <button type="submit" class="animated-btn">Add</button>
+            </div>
+            <p id="college-success" class="success-text hidden" style="color: green; margin-top: 8px;">✅ College bloc added!</p>
+            <p id="college-error" class="error-text hidden" style="color: red; margin-top: 5px;">❌ Failed to add college bloc.</p>
+          </form>
+        </div>
+
+        <!-- College Bloc Table -->
+        <div class="box glass fade-in-bottom">
+          <h2>College Blocs</h2>
+          <table id="college-table" class="admin-table"></table>
+        </div>
+
+        <!-- College Vote Results Chart -->
+        <div class="box glass fade-in-bottom">
+          <h2>📊 College Vote Results</h2>
+          <canvas id="adminCollegeChart" width="400" height="200"></canvas>
+
+          <!-- College Selection Dropdown -->
+          <label for="admin-college-dropdown" style="margin-top: 10px;">View College Bloc Results for:</label>
+          <select id="admin-college-dropdown" class="animated-btn" style="margin: 10px 0;"></select>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ✅ Admin JavaScript -->
+  <script src="js/admin.js"></script>
+
+</body>
+</html>
