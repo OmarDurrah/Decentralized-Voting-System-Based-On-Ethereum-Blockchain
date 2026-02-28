@@ -202,63 +202,19 @@ CREATE TABLE votes (
 ```
 
 ---
-
-### 4️⃣ Create `.env` File
-
-```
-
-DB_HOST=localhost
+4️⃣ Environment VariablesCreate a file named .env in the root directory:Code snippetDB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=yourpassword
+DB_PASSWORD=your_mysql_password
 DB_NAME=amitdb
-
-JWT_SECRET=your_super_secret_jwt_key_here_change_this
+JWT_SECRET=your_super_secret_key
 PORT=5500
-Step 5: Blockchain Setup
-
-
-# Terminal 1 - Deploy Smart Contract
-
-cd blockchain
+5️⃣ Blockchain DeploymentOpen Ganache and ensure it's running on 127.0.0.1:7545.Deploy the contracts:Bashcd blockchain
 truffle compile
 truffle migrate --network development
-Step 6: Start the Application
-
-
-# Terminal 2 - Start Backend Server
-
+6️⃣ Start the EngineBash# Return to root
+cd ..
 node backendwauto.js
-
-# Expected output:
-
-# ✅ Connected to MySQL Database
-
-# 📌 Contract Address: 0x...
-
-# 🚀 Server running on http://172.28.128.1:5500
-
-Step 7: Access the Application
-text
-http://localhost:5500
-🎯 Usage Guide
-User Flow
-javascript
-async function userFlow() {
-// 1. Login with credentials
-// 2. Connect MetaMask when prompted
-// 3. Select university bloc (e.g., "كتلة اهل الهمة")
-// 4. Select college bloc based on your college
-// 5. Confirm transaction in MetaMask
-// 6. View real-time results
-}
-Admin Flow
-javascript
-async function adminFlow() {
-// 1. Login with admin@voting.com
-// 2. Manage blocs (add/edit university/college blocs)
-// 3. Monitor vote progress across all colleges
-// 4. View analytics for engineering/medicine colleges
-}
+Access the app at: http://localhost:5500🦊 MetaMask ConfigurationTo interact with the local blockchain, configure MetaMask as follows:FieldValueNetwork NameGanache LocalRPC URLhttp://127.0.0.1:7545Chain ID1337CurrencyETHNote: Remember to import a private key from Ganache into MetaMask to get test funds.
 🔧 API Endpoints
 Method Endpoint Description
 POST /login User login
