@@ -213,16 +213,101 @@ JWT_SECRET=your_secure_secret_key
 PORT=5500
 ```
 
+
+## 5️⃣ 🦊 MetaMask Setup Guide
+
+This project requires **MetaMask** to sign blockchain transactions and interact with the smart contract deployed on Ganache.
+
 ---
 
-### 5️⃣ Blockchain Setup
+###  Install MetaMask
+
+1. Visit the official website: https://metamask.io
+2. Install the browser extension (Chrome / Edge / Firefox).
+3. Create a new wallet.
+4. Securely store your Secret Recovery Phrase.
+
+---
+
+###  Configure Local Blockchain (Ganache)
+
+After starting Ganache:
+
+- RPC Server: `http://127.0.0.1:7545` (or your configured port)
+- Chain ID: `1337` (default for Ganache)
+- Currency Symbol: `ETH`
+
+---
+
+###  Add Ganache Network to MetaMask
+
+1. Open MetaMask.
+2. Click on the network dropdown (top-left).
+3. Select **Add Network**.
+4. Choose **Add a network manually**.
+5. Enter the following:
+
+| Field | Value |
+|-------|-------|
+| Network Name | Ganache Local |
+| New RPC URL | http://127.0.0.1:7545 |
+| Chain ID | 1337 |
+| Currency Symbol | ETH |
+
+6. Click **Save**.
+
+---
+
+###  Import Ganache Account
+
+1. Open Ganache.
+2. Copy one of the **private keys**.
+3. Open MetaMask.
+4. Click on the account icon.
+5. Select **Import Account**.
+6. Paste the private key.
+7. Confirm.
+
+You should now see the imported account with test ETH balance.
+
+---
+
+###  Connect to the Application
+
+1. Start the backend server.
+2. Open `http://localhost:5500`
+3. Click **Connect Wallet**.
+4. Approve the MetaMask connection.
+5. Confirm transactions when voting.
+
+---
+
+### ⚠️ Important Notes
+
+- Make sure MetaMask is connected to the **Ganache Local** network.
+- Ensure the Chain ID matches Ganache.
+- If transactions fail, verify that the contract was successfully deployed.
+- Always restart MetaMask after changing networks if issues occur.
+
+---
+
+MetaMask is required for:
+- Signing vote transactions
+- Preventing double voting
+- Verifying wallet identity
+- Interacting with the deployed smart contract
+
+---
+
+###  Blockchain Setup
 
 ---
 first of all open ganache, it should be like this , 
 the first figue shows the UI of the ganache,
 the secone displays the configuration and it could be difference from device to other
 --
-<img width="956" height="687" alt="{565ABE39-3F56-4B59-B676-8B58127C57BA}" src="https://github.com/user-attachments/assets/c45c5d31-7da3-4ab5-9717-a95aa186c53d" />
+<img width="909" height="608" alt="{D890BEE1-3D83-499B-B896-4C537541D77C}" src="https://github.com/user-attachments/assets/9805d7da-1c94-4c7b-9fb1-2d7af420763f" />
+
 
 
 
