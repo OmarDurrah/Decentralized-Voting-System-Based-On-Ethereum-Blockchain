@@ -356,7 +356,11 @@ http://localhost:5500
 3. Monitor voting
 4. View analytics
 
-as you can see in the figure below 
+
+->as you can see in the figure below<-
+--
+
+
 <img width="944" height="1221" alt="{FB394219-E15F-45BC-AFB9-E75FCA97C1BC}" src="https://github.com/user-attachments/assets/667398f6-27d2-4f37-ae8e-0f69496efeef" />
 
 
