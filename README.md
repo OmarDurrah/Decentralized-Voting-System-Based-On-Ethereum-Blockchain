@@ -215,6 +215,8 @@ DB_NAME=amitdb
 JWT_SECRET=your_super_secret_jwt_key_here_change_this
 PORT=5500
 
+```
+
 ---
 
 
