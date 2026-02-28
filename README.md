@@ -214,6 +214,9 @@ DB_NAME=amitdb
 
 JWT_SECRET=your_super_secret_jwt_key_here_change_this
 PORT=5500
+
+---
+
 Step 5: Blockchain Setup
 
 
@@ -222,6 +225,8 @@ Step 5: Blockchain Setup
 cd blockchain
 truffle compile
 truffle migrate --network development
+---
+
 Step 6: Start the Application
 
 
@@ -236,6 +241,8 @@ node backendwauto.js
 # 📌 Contract Address: 0x...
 
 # 🚀 Server running on http://172.28.128.1:5500
+
+---
 
 Step 7: Access the Application
 text
@@ -259,6 +266,8 @@ async function adminFlow() {
 // 3. Monitor vote progress across all colleges
 // 4. View analytics for engineering/medicine colleges
 }
+---
+
 🔧 API Endpoints
 Method Endpoint Description
 POST /login User login
@@ -271,6 +280,7 @@ POST /admin/university-blocs Add university bloc
 PUT /admin/university-blocs/:id Edit university bloc
 GET /admin/college-blocs List college blocs
 POST /admin/college-blocs Add college bloc
+---
 📁 Project Structure
 
 decentralized-voting-system/
