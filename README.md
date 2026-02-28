@@ -88,6 +88,7 @@ By using **Ethereum smart contracts**, this system ensures:
 ---
 
 ## 🏗 System Architecture
+as you can see in the figure below 
 
 <img width="1483" height="946" alt="{7E3EA03A-3BE1-47A3-BEC5-1C82AE60A9C5}" src="https://github.com/user-attachments/assets/1b45d51a-2e68-4865-8f67-3a98726db543" />
 
@@ -217,7 +218,8 @@ PORT=5500
 ### 5️⃣ Blockchain Setup
 
 ---
-first of all open ganache, it hsould be like this figure, 
+first of all open ganache, it should be like this figure, 
+--
 <img width="1518" height="1034" alt="{D0B12E13-0689-4146-A63B-932E3D923837}" src="https://github.com/user-attachments/assets/279a3cf1-964f-4092-bc3d-fb63c293f36b" />
 keep in your mind, the configuration could be different from device to other, for example i used PORT=55OO in your device this port could be alreday used the same thing as backnd and dadtabase!
 
