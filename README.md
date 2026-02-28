@@ -1,80 +1,313 @@
-# 👋 Hi, I'm Omar Durrah
+# 🗳️ Decentralized University Voting System
 
-💻 Full Stack Developer | React & Node.js  
-🔗 Blockchain Developer (Solidity)  
-🤖 AI Enthusiast  
-📍 Jordan  
 
----
 
-## 🚀 About Me
+Secure • Transparent • Blockchain-Powered University Elections
 
-I am a motivated Full Stack Developer with strong foundations in backend architecture, distributed systems, and modern web technologies. I build scalable applications using React, Node.js, Express, and MySQL.
+Built with ❤️ by **Omar Durrah** & **Mohammad Saleem**
+Supervised by **Dr. Ramze Saifan**
+**University of Jordan**
 
-I have hands-on experience developing smart contracts using Solidity and building decentralized applications tested locally using Ganache and Truffle.
-
-I’m passionate about secure system design, clean architecture, and integrating intelligent features into real-world applications.
-
----
-
-## 🛠 Tech Stack
-
-### 🌐 Frontend
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- React.js
-
-### ⚙️ Backend
-- Node.js
-- Express.js
-
-### 🗄 Database
-- SQL
-- MySQL
-
-### 🔗 Blockchain
-- Solidity
-- Smart Contract Development
-- Ganache (Local Ethereum Network)
-- Truffle Framework
-- Web3 Concepts
-
-### 💻 Programming Languages
-- JavaScript
-- Python
-- C++
-
-### 🤖 AI / Machine Learning
-- TensorFlow
-- Neural Network Fundamentals
-- Basic Deep Learning Concepts
-
----
-
-## 📂 Featured Projects
-
-### 🔹 Decentralized Voting System (Blockchain)
-A blockchain-based voting system built using Solidity smart contracts.  
-Tested locally on Ganache and managed using the Truffle framework.  
-
-Features:
-- Secure and tamper-resistant vote recording
-- Transparent vote counting
-- Smart contract-based validation
-- Decentralized architecture principles
-
-🔗 [View Project](https://github.com/yourusername/project-link)
 
 
 ---
 
-## 📈 Current Focus
-- Backend system design
-- Distributed and decentralized systems
-- Scalable full stack development
-- AI-powered applications
+## 📌 Overview
+
+The **Decentralized University Voting System** is a secure and transparent election platform designed for university student elections.
+
+It combines **Ethereum smart contracts** with a **Node.js backend** and **MySQL database** to provide:
+
+* Immutable vote storage
+* Double-voting prevention
+* Role-based administration
+* Real-time analytics and visualization
+
+The system supports **dual-layer voting**:
+
+* 🏛 University-wide blocs
+* 🏫 College-specific blocs
 
 ---
 
-📊 Always building. Always improving.
+## 🤔 Why Blockchain?
+
+Traditional electronic voting systems suffer from:
+
+* Centralized manipulation risks
+* Lack of transparency
+* Difficulty verifying vote integrity
+
+By using **Ethereum smart contracts**, this system ensures:
+
+* ✅ Immutable vote recording
+* ✅ Transparent verification
+* ✅ Cryptographic security
+* ✅ On-chain double-voting prevention
+
+---
+
+## 🚀 Features
+
+### 🔐 Security & Authentication
+
+* JWT-based authentication
+* Role-based access control (Admin/User)
+* bcrypt password hashing
+* MetaMask transaction signing
+* Blockchain-based double-voting prevention
+
+### 🗳 Voting Mechanism
+
+* Dual-layer voting (University + College blocs)
+* Smart contract validation
+* keccak256 vote hashing
+* Real-time synchronization
+* Arabic language support
+
+### 📊 Results & Analytics
+
+* Interactive charts (Chart.js)
+* College-filtered analytics
+* 15-second caching
+* Live refresh capability
+
+### 👑 Admin Dashboard
+
+* Add/Edit university blocs
+* Add/Edit college blocs
+* Duplicate detection
+* Blockchain synchronization
+
+---
+
+## 🏗 System Architecture
+
+```
+Frontend (HTML/CSS/JavaScript)
+        │
+        ▼
+  MeteMask(wallet)
+        │
+        ▼
+Ethereum Smart Contract (Solidity)
+        │
+        ▼
+Ganache (Local Blockchain)
+```
+
+---
+
+## 🔗 Smart Contract Design
+
+The `VotingSystem.sol` contract:
+
+* Maps voter wallet addresses to voting status
+* Prevents double voting using address validation
+* Stores vote counts on-chain
+* Uses keccak256 hashing
+* Synchronizes with backend (hybrid model)
+
+Solidity Version: **0.8.13**
+
+---
+
+## 🛠 Technology Stack
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Chart.js
+* Ethers.js
+
+### Backend
+
+* Node.js
+* Express.js
+* MySQL
+* JWT
+* bcrypt
+
+### Blockchain
+
+* Solidity
+* Truffle
+* Ganache
+* Web3.js
+
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+
+* Node.js v18+
+* MySQL v8+
+* Ganache v7+
+* MetaMask extension
+
+---
+
+### 1️⃣ Clone Repository
+
+
+git clone https://github.com/yourusername/decentralized-voting-system.git
+cd decentralized-voting-system
+
+
+---
+
+### 2️⃣ Install Dependencies
+
+in your vs code terminal write this command
+
+npm install express body-parser mysql2 cors bcryptjs jsonwebtoken ethers web3 dotenv
+---
+
+
+
+### 3️⃣ Database Setup
+
+```sql
+CREATE DATABASE IF NOT EXISTS amitdb;
+USE amitdb;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    college VARCHAR(100) NOT NULL,
+    role ENUM('user','admin') DEFAULT 'user'
+);
+
+CREATE TABLE university_blocs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE college_blocs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    college VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE votes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    university_bloc_id INT,
+    college_bloc_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+```
+
+---
+
+### 4️⃣ Create `.env` File
+
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=amitdb
+JWT_SECRET=your_secure_secret_key
+PORT=5500
+```
+
+---
+
+### 5️⃣ Blockchain Setup
+
+```bash
+cd blockchain
+truffle compile
+truffle migrate --network development
+```
+
+---
+
+### 6️⃣ Run Server
+
+```bash
+node backendwauto.js
+```
+
+Open in browser:
+
+```
+http://localhost:5500
+```
+
+---
+
+## 👤 Usage
+
+### Student Flow
+
+1. Login
+2. Connect MetaMask
+3. Select blocs
+4. Confirm transaction
+5. View results
+
+### Admin Flow
+
+1. Login as admin
+2. Manage blocs
+3. Monitor voting
+4. View analytics
+
+---
+
+## 🔌 API Endpoints
+
+| Method | Endpoint                | Description          |
+| ------ | ----------------------- | -------------------- |
+| POST   | /login                  | User login           |
+| GET    | /university-blocs       | Get university blocs |
+| GET    | /college-blocs/:college | Get college blocs    |
+| POST   | /submit-vote            | Submit vote          |
+| GET    | /results                | Get results          |
+| POST   | /admin/university-blocs | Add university bloc  |
+| POST   | /admin/college-blocs    | Add college bloc     |
+
+---
+
+## 🧠 Future Improvements
+
+* Deploy to Ethereum testnet (Sepolia)
+* Add election time window
+* Dockerize deployment
+* Gas optimization
+* CI/CD integration
+
+---
+
+## 👨‍💻 Contributors
+
+* **Omar Durrah**
+* **Mohammad Saleem**
+
+### Academic Supervisor
+
+* **Dr. Ramze Saifan**
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+<div align="center">
+
+نظام تصويت جامعي لامركزي آمن وشفاف
+
+⭐ Star the repository if you like it ⭐
+
+</div>
+
+
+
