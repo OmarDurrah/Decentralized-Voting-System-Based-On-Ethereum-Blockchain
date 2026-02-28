@@ -1,5 +1,12 @@
 # 🗳️ Decentralized University Voting System
+<div align="center">
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)
+![Solidity](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 
 Secure • Transparent • Blockchain-Powered University Elections
@@ -63,7 +70,6 @@ By using **Ethereum smart contracts**, this system ensures:
 * Smart contract validation
 * keccak256 vote hashing
 * Real-time synchronization
-* Arabic language support
 
 ### 📊 Results & Analytics
 
@@ -137,6 +143,7 @@ Solidity Version: **0.8.13**
 * MySQL v8+
 * Ganache v7+
 * MetaMask extension
+* truffle 
 
 ---
 
@@ -151,7 +158,7 @@ cd decentralized-voting-system
 
 ### 2️⃣ Install Dependencies
 
-in your vs code terminal write this command
+in your VScode terminal write this command, make sure that you are in the correct path
 
 npm install express body-parser mysql2 cors bcryptjs jsonwebtoken ethers web3 dotenv
 ---
@@ -209,6 +216,12 @@ PORT=5500
 
 ### 5️⃣ Blockchain Setup
 
+---
+first of all open ganache, it hsould be like this figure, 
+<img width="1518" height="1034" alt="{D0B12E13-0689-4146-A63B-932E3D923837}" src="https://github.com/user-attachments/assets/279a3cf1-964f-4092-bc3d-fb63c293f36b" />
+keep in your mind, the configuration could be different from device to other, for example i used PORT=55OO in your device this port could be alreday used the same thing as backnd and dadtabase!
+
+now you are ready for compile your contracts
 ```bash
 cd blockchain
 truffle compile
@@ -248,7 +261,10 @@ http://localhost:5500
 3. Monitor voting
 4. View analytics
 
----
+as you can see in the figure below 
+<img width="944" height="1221" alt="{FB394219-E15F-45BC-AFB9-E75FCA97C1BC}" src="https://github.com/user-attachments/assets/667398f6-27d2-4f37-ae8e-0f69496efeef" />
+
+
 
 ## 🔌 API Endpoints
 
