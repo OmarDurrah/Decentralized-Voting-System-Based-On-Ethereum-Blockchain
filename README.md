@@ -218,11 +218,16 @@ PORT=5500
 ### 5️⃣ Blockchain Setup
 
 ---
-first of all open ganache, it should be like this figure, 
+first of all open ganache, it should be like this , 
+the first figue shows the UI of the ganache 
+the secone displays the configuration and it could be difference from device to other
 --
-<img width="1518" height="1034" alt="{D0B12E13-0689-4146-A63B-932E3D923837}" src="https://github.com/user-attachments/assets/279a3cf1-964f-4092-bc3d-fb63c293f36b" />
-keep in your mind, the configuration could be different from device to other, for example i used PORT=55OO in your device this port could be alreday used the same thing as backnd and dadtabase!
+<img width="1525" height="500" alt="{5A9F43DF-E2DF-4C97-8380-620B006C2149}" src="https://github.com/user-attachments/assets/3e9d7ee0-4207-4f4c-abbb-6ea84b8edc80" />
+<img width="2297" height="898" alt="{BE214A8B-CD06-4EC9-A1FF-AD2F91578CB2}" src="https://github.com/user-attachments/assets/909499a5-b26b-42aa-8620-227252ca685f" />
 
+
+!IMPORTANT!:keep in your mind, the configuration could be different from device to other, for example i used PORT=55OO in your device this port could be alreday used the same thing as backnd and dadtabase!
+--
 now you are ready for compile your contracts
 ```bash
 cd blockchain
