@@ -220,6 +220,25 @@ PORT=5500
 ---
 
 
+###  Blockchain Setup
+
+---
+first of all open ganache, it should be like this , 
+the first figue shows the UI of the ganache,
+the secone displays the configuration and it could be difference from device to other
+--
+<img width="909" height="608" alt="{D890BEE1-3D83-499B-B896-4C537541D77C}" src="https://github.com/user-attachments/assets/9805d7da-1c94-4c7b-9fb1-2d7af420763f" />
+
+
+
+
+<img width="2297" height="898" alt="{BE214A8B-CD06-4EC9-A1FF-AD2F91578CB2}" src="https://github.com/user-attachments/assets/909499a5-b26b-42aa-8620-227252ca685f" />
+
+
+!IMPORTANT!:keep in your mind, the configuration could be different from device to other, for example i used PORT=55OO in your device this port could be alreday used the same thing as backnd and dadtabase!
+---
+
+
 ## 5️⃣ 🦊 MetaMask Setup Guide
 
 This project requires **MetaMask** to sign blockchain transactions and interact with the smart contract deployed on Ganache.
@@ -305,24 +324,9 @@ MetaMask is required for:
 
 ---
 
-###  Blockchain Setup
 
----
-first of all open ganache, it should be like this , 
-the first figue shows the UI of the ganache,
-the secone displays the configuration and it could be difference from device to other
---
-<img width="909" height="608" alt="{D890BEE1-3D83-499B-B896-4C537541D77C}" src="https://github.com/user-attachments/assets/9805d7da-1c94-4c7b-9fb1-2d7af420763f" />
-
-
-
-
-<img width="2297" height="898" alt="{BE214A8B-CD06-4EC9-A1FF-AD2F91578CB2}" src="https://github.com/user-attachments/assets/909499a5-b26b-42aa-8620-227252ca685f" />
-
-
-!IMPORTANT!:keep in your mind, the configuration could be different from device to other, for example i used PORT=55OO in your device this port could be alreday used the same thing as backnd and dadtabase!
---
 now you are ready for compile your contracts
+-
 ```bash
 cd blockchain
 truffle compile
