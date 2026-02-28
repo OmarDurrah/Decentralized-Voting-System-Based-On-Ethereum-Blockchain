@@ -219,10 +219,13 @@ PORT=5500
 
 ---
 first of all open ganache, it should be like this , 
-the first figue shows the UI of the ganache 
+the first figue shows the UI of the ganache,
 the secone displays the configuration and it could be difference from device to other
 --
-<img width="1525" height="500" alt="{5A9F43DF-E2DF-4C97-8380-620B006C2149}" src="https://github.com/user-attachments/assets/3e9d7ee0-4207-4f4c-abbb-6ea84b8edc80" />
+<img width="956" height="687" alt="{565ABE39-3F56-4B59-B676-8B58127C57BA}" src="https://github.com/user-attachments/assets/c45c5d31-7da3-4ab5-9717-a95aa186c53d" />
+
+
+
 <img width="2297" height="898" alt="{BE214A8B-CD06-4EC9-A1FF-AD2F91578CB2}" src="https://github.com/user-attachments/assets/909499a5-b26b-42aa-8620-227252ca685f" />
 
 
@@ -310,7 +313,28 @@ as you can see in the figure below
 
 ## 📜 License
 
+
 MIT License
+
+Copyright (c) 2026 Omar Al Durrah, Dr. Ramzi Saifan, Mohammad Saleem
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ---
 
