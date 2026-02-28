@@ -83,18 +83,8 @@ By using **Ethereum smart contracts**, this system ensures:
 
 ## 🏗 System Architecture
 
-```
-Frontend (HTML/CSS/JavaScript)
-        │
-        ▼
-  MeteMask(wallet)
-        │
-        ▼
-Ethereum Smart Contract (Solidity)
-        │
-        ▼
-Ganache (Local Blockchain)
-```
+<img width="1483" height="946" alt="{7E3EA03A-3BE1-47A3-BEC5-1C82AE60A9C5}" src="https://github.com/user-attachments/assets/1b45d51a-2e68-4865-8f67-3a98726db543" />
+
 
 ---
 
